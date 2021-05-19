@@ -1,43 +1,27 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Banner from "./banner";
-import Product from "component/Product";
-import product_img from "../../assets/images/shop.jpg";
+import {connect} from "react-redux";
 import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 
-const dummyProducts = [
-  {
-    id: 1,
-    title: "Toothpaste",
-    desc: "Isme namak hai",
-    price: 35,
-    image: product_img,
-  },
-  {
-    id: 2,
-    title: "Tata Salt",
-    desc: "Desh ka namak",
-    price: 29,
-    image: product_img,
-  },
-  {
-    id: 3,
-    title: "Maggi",
-    desc: "Do minute mein khushiyan",
-    price: 20,
-    image: product_img,
-  },
-  {
-    id: 4,
-    title: "Kurkure",
-    desc: "Tedha hai pad meda hai",
-    price: 10,
-    image: product_img,
-  },
-];
+import Banner from "./banner";
+import Product from "component/Product/index";
+import SearchBar from "component/Search";
 
-export default class Main extends Component {
+import {loadProducts} from "store/actions/product";
+
+import product_img from "../../assets/images/shop.jpg";
+
+class Main extends Component {
+
+
+  componentDidMount(){
+
+    this.props.loadProducts();
+  }
+
   render() {
+    const {productReducer} = this.props;
+    
     return (
       <>
         <Container fluid className="main-compt pt-3 pb-3">
@@ -45,21 +29,22 @@ export default class Main extends Component {
           <div className="feature-product container center">
             <h2 className="feature-title">Featured Products</h2>
             <Row>
-              {dummyProducts?.map((product) => {
-                const { id, title, desc, price, image } = product;
+              {productReducer.products?.map((product) => {
+                const { _id, name, description, price, image } = product;
 
                 return (
-                  <Col className="col-md-3">
-                    <Link to={"/product/" + id}>
+                  <Col className="col-md-3" 
+                  key={_id}>
+                    <Link to={"/product/" + _id}>
                       <Product
-                        key={id}
-                        id={id}
-                        image={image}
-                        desc={desc}
-                        title={title}
+                        id={_id}
+                        image={product_img}
+                        desc={description}
+                        title={name}
                         price={price}
                       />
                     </Link>
+                    
                   </Col>
                 );
               })}
@@ -70,3 +55,11 @@ export default class Main extends Component {
     );
   }
 }
+
+
+
+const mapStateToProps = (state) => ({
+  productReducer: state.productReducer  
+})
+
+export default connect(mapStateToProps, {loadProducts}) (Main);

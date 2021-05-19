@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Search from "component/Search"
 
 export default class Header extends Component {
   render() {
@@ -10,7 +11,10 @@ export default class Header extends Component {
           <Link to="/">
             <Navbar.Brand>Shop-Mania</Navbar.Brand>
           </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+          <Search className='my-1' />
+
+          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Link to="/">
@@ -23,7 +27,7 @@ export default class Header extends Component {
                 <Nav.Link href="#link">Support</Nav.Link>
               </Link>
             </Nav>
-          </Navbar.Collapse>
+          </Navbar.Collapse> */}
         </Navbar>
       </Router>
     );

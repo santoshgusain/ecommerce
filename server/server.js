@@ -5,6 +5,7 @@ const cors      = require('cors');
 const port      = process.env.PORT || 2009
 const db        = require("./config/db");
 const users  = require('./routes/users');
+const products  = require('./routes/products');
 // const User    = require("./models/user");
 app.use(express.json());
 app.use(cors())
@@ -12,6 +13,7 @@ app.use(cors())
 db();
 
 app.use('/users',users);
+app.use('/products',products);
 
 
 app.get("/",(req,res)=>{

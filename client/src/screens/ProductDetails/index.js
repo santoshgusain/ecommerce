@@ -9,13 +9,23 @@ import {loadUsers,findUsers} from '../../store/actions/users';
 import spinnerImage from 'assets/images/spinner.svg'
 
 class ProductDetails extends Component {
+  state = {
+    product: {}
+  }
+
+
   componentDidMount() {
     this.props.loadUsers();
     this.props.findUsers('san');
+
+    const product = this.props.productReducer.products.find(prod => prod._id === this.props.match.params.product_id);
+
+    this.setState({product})
   }
 
   render() {
-    const { product_id } = this.props.match.params;
+    const { longDescription , name, description, price, } = this.state?.product;
+    
     const {users, isLoading,searchedUsers} = this.props.usersReducer;
 
     return (
@@ -25,29 +35,13 @@ class ProductDetails extends Component {
         left: 0, top: 0}}>
             <img src={spinnerImage} style={{width: 100, height: 100}} alt="loading"/>
           </div>}
-
-        {users?.map(({name, post, dob}) => (
-          <div>
-            {name} {!!dob && `(${dob})`}
-            <br />
-            {post}
-          </div>
-        ))}
-  <hr/>
-        {searchedUsers?.map(({name, post, dob}) => (
-          <div style={{color: 'red'}}>
-            {name} {!!dob && <Moment date={dob} format="DD MM, YYYY" />}
-            <br />
-            {post}
-          </div>
-        ))}
-
         <div className="left">
           <img src={product_img} alt="product" />
         </div>
         <div className="right">
-          <h4>RealMe Note 8</h4>
+          <h4>{description} | Price: &#8377;{price}</h4>
           <hr />
+          <p>{longDescription}</p>
           <table>
             <tr>
               <td>Price</td>
@@ -61,7 +55,8 @@ class ProductDetails extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    usersReducer: state.usersReducer  
+    usersReducer: state.usersReducer  ,
+    productReducer: state.productReducer 
   })
 
 export default connect(mapStateToProps, {loadUsers,findUsers}) (withRouter(ProductDetails));
