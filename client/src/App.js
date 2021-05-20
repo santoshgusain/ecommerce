@@ -8,7 +8,6 @@ import Header from "component/Header/index";
 function App() {
   return (
     <Provider store={store}>
-      <Header/>
     <Routes/>
     </Provider>
   );

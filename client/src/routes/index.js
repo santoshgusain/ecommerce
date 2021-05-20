@@ -4,12 +4,15 @@ import Home from "screens/Home";
 import ProductDetails from "screens/ProductDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchedProducts from "screens/SearchedProduct";
+import Header  from "component/Header"
 
 
 
 function Routes() {
   return (
     <Router>
+            <Header/>
+
       <Switch>
         <Route exact path="/product">
           <Home />
