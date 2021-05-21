@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 
 export default class HeaderBar extends Component {
 
@@ -11,7 +12,9 @@ export default class HeaderBar extends Component {
                     <a href={url}><i className="fa fa-fw fa-search mx-1"></i> Search</a> 
                     <a href={url}><i className="fa fa-fw fa-envelope mx-1"></i> Contact</a> 
                     <div style={{display:"flex", flex: "1", flexDirection: 'row-reverse'}}>
-                        <a  href={url}><i class="fas fa-shopping-cart"></i>Cart</a> 
+                    <Link to="/cart">
+                        <i class="fas fa-shopping-cart"></i>Cart
+                    </Link>
                     </div>
                 </div>
         )

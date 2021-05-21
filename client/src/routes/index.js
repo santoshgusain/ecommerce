@@ -4,7 +4,8 @@ import Home from "screens/Home";
 import ProductDetails from "screens/ProductDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchedProducts from "screens/SearchedProduct";
-import Header  from "component/Header"
+import Header  from "component/Header";
+import Cart from "screens/Cart";
 
 
 
@@ -14,6 +15,9 @@ function Routes() {
             <Header/>
 
       <Switch>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
         <Route exact path="/product">
           <Home />
         </Route>
