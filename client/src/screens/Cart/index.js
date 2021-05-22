@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CartItem from "component/cartItem";
+import CheckOutCart from "component/CheckOutCart";
 // import CheckOutBox from "component/checkOutBox";
 
 export default class Cart extends Component {
@@ -7,7 +8,7 @@ export default class Cart extends Component {
         return (
             <>
             <div className="container" >
-            This is an cart and here are all your cart item
+                <h2 className="my-3">Your Cart</h2>
                 <div style={{display:"flex"}}   >
 
                     <div style={{flex:5}}>
@@ -15,8 +16,7 @@ export default class Cart extends Component {
                         <CartItem/>
                     </div>
                     <div style={{backgroundColor:"grey",flex:3}}>
-                        {/* <CheckOutBox/> */}
-                        heere im
+                        <CheckOutCart/>
                     </div>
 
                 </div>
