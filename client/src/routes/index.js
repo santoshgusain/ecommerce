@@ -5,7 +5,9 @@ import ProductDetails from "screens/ProductDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchedProducts from "screens/SearchedProduct";
 import Header  from "component/Header";
+import Footer  from "component/Footer";
 import Cart from "screens/Cart";
+import ManageAddress from "screens/ManageAddress";
 
 
 
@@ -30,10 +32,14 @@ function Routes() {
         <Route exact path="/search">
           <SearchedProducts />
         </Route>
+        <Route exact path="/change-address">
+          <ManageAddress />
+        </Route>
         <Route exact path="/">
           <Home />
         </Route>
       </Switch>
+      <Footer/>
     </Router>
   );
 }

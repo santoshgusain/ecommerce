@@ -1,4 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap");
+body {
+  background-color: rgb(233, 235, 236);
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.3em;
+}
+.navbar {
+  background-color: #417dd6 !important;
+}
+.navbar-brand {
+  color: #f5f7ef !important;
+}
+.navbar-secondary {
+  background-color: #1c3761 !important;
+}
+.navbar-secondary a {
+  color: white;
+  font-size: 0.97em;
+  text-decoration-line: none;
+}
+.navbar-secondary a:hover {
+  color: #a4b8d6
+}
+.user-controls a,i {
+  color: white
+}
 .banner {
   padding-top: 10px;
   /* background-color: lightblue; */
@@ -13,11 +45,12 @@
 .banner-text {
   font-family: "Antonio", sans-serif;
   width: 40%;
-  color: white;
+  color: #1c3761;
   float: right;
   position: relative;
   top: 10px;
   font-size: 18px;
+  font-weight: '900 !important';
   /* right: 100%; */
 }
 

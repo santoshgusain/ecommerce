@@ -9,10 +9,10 @@ import product_img from "../../assets/images/shop.jpg";
 export default class CartItem extends Component {
   render() {
     return (
-      <Card className="mb-3  mr-4" style={{border:"0px",borderBottom:"1px solid lightgrey",borderRadius:"0px"}}>
+      <Card className="mb-3  mr-4 py-4" style={{border:"0px",borderBottom:"1px solid #eee",borderRadius:"0px"}}>
         <Card.Body style={{ display: "flex", padding: "12px" }}>
           <div style={{ flexBasis: "190px" }}>
-            <Card.Img variant="top" src={product_img} style={{height:"100%"}} />
+            <Card.Img variant="top" src={product_img} style={{width: 200}} />
           </div>
           <div className="ml-3">
             <Card.Title>Card title</Card.Title>

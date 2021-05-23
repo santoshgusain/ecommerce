@@ -10,8 +10,7 @@ import Box from "@material-ui/core/Box/Box";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    height:"100%",
-    // borderBottom:"1px solid #eae8e8"
+    padding: "10px"
   },
   bullet: {
     display: 'inline-block',
@@ -78,10 +77,24 @@ export default function CheckOutCart() {
         </Grid>
       </Grid>
       </Grid>
+      <Box >
+        <Button  
+            style={{
+              padding : [0, "!important"],
+              width:["80%", "!important"],
+              marginTop:"10px",
+              backgroundColor:"yellow"
+            }} 
+            
+            variant="filled"
+            size="small"
+            fullWidth="true"
+            
+          >
+            Proceed To Checkout
+        </Button>
+      </Box>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }
