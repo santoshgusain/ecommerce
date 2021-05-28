@@ -8,6 +8,7 @@ import Header  from "component/Header";
 import Footer  from "component/Footer";
 import Cart from "screens/Cart";
 import ManageAddress from "screens/ManageAddress";
+import OrderHistory from "screens/OrderHistory";
 
 
 
@@ -34,6 +35,9 @@ function Routes() {
         </Route>
         <Route exact path="/change-address">
           <ManageAddress />
+        </Route>
+        <Route exact path="/orders">
+          <OrderHistory />
         </Route>
         <Route exact path="/">
           <Home />

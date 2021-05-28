@@ -28,8 +28,8 @@ h3 {
 .navbar-secondary a:hover {
   color: #a4b8d6
 }
-.user-controls a,i {
-  color: white
+.user-controls i {
+  color: black
 }
 .banner {
   padding-top: 10px;
@@ -78,4 +78,49 @@ footer {
 
   background-color: #0391c5;
   /* height: 85vh; */
+}
+
+#basic-nav-dropdown{
+  color:white
+}
+a{
+  text-decoration: none !important;
+}
+
+.order-history-title{
+  display: flex; 
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.order-item-heading{
+  flex-direction: row; 
+  display: flex;
+  padding:10px 0;
+}
+.sub-heading{
+  font-size: 12px;
+  font-weight: bold;
+}
+.order-item-value{
+  font-size: 12px;
+}
+
+.nav-links{
+  font-size: 13px;
+  font-weight: 550;
+  margin-left: 8px;
+}
+
+.item-action{
+  font-size: 14px;
+  background-color: lightgray;
+  color:black
+}
+.action-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 10px;
 }

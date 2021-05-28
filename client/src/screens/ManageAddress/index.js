@@ -1,104 +1,134 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import Card from '@material-ui/core/Card';
-// import CardContent from '@material-ui/core/CardContent';
-// import Button from '@material-ui/core/Button';
-import {Typography, Grid,Paper,Box,TextField} from '@material-ui/core';
-// import Box from "@material-ui/core/Box/Box";
-// import Avatar from '@material-ui/core/Avatar';
-// import Chip from '@material-ui/core/Chip';
-// import DoneIcon from '@material-ui/icons/Done';
-// import {Link} from "react-router-dom";
+import { Box,TextField,Button,Grid} from '@material-ui/core';
+import { Save as SaveIcon } from '@material-ui/icons';
 import Address from "component/Address";
+import DefaultAddress from "component/Address/DefaultAddress";
 
 
 const useStyles = makeStyles((theme) => ({
     root:{
         display: 'inline-flex',
         justifyContent:"space-between",
+        // width:"100%",
+        backgroundColor:"white",
         width:"100%"
+
     },
     left: {
-        flex:1
+        width:"60%",
+        padding:"20px",
+        display:"flex",
+        flexDirection:"row",
+        flexWrap:"wrap"
     },
     right:{
+        padding:"0 10px",
+        display:"flex",
+        margin:"50px 1px",
         flex:1,
+        flexDirection:"column",
+        paddingHorizontal:"10px",
+        
         '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            width: '25ch',
+            marginBottom: theme.spacing(2),
           },
+        '& .MuiOutlinedInput-input':{
+            padding:"12px",
+            fontSize:"14px",
+    
+        },
+        '& .addresstitle':{
+            fontSize:"20px",
+            marginBottom:"25px"
+        }
+
+    },
+    button:{
+        flex:1,
+        margin:0
     }
+
+    
   }));
 
  export default function ManageAddress() {
  
     const classes = useStyles();
         return (
+            <>
             <div className={classes.root}>
-                <div className={classes.left}>
-                    {/* <Paper>
-                    </Paper> */}
-                    <Box>
-                        <Paper elevation={3}>
-                            <Address/>
-                        </Paper>
+                <Box  mt={2} className={classes.left}>
+                <Grid container spacing={1}>
+       
+                    <Grid md={12} item> 
+                        <Box><h1>Delivery Address</h1></Box>
+                        <hr/>
+                    </Grid>
+                    <Grid md={12} item> 
+
+                                    <DefaultAddress className="defaultaddress" hideChangeBtn={true} height={"150px"}/> 
+                    </Grid>
+                    <Address>sdfsfsdfsdf</Address>
+                    <Address>sdfsfsdfsdf</Address>
+                    <Address>sdfsfsdfsdf</Address>
+                    <Address>sdfsfsdfsdf</Address>
+                    <Address>sdfsfsdfsdf</Address>
+                    <Address>sdfsfsdfsdf</Address>
+                </Grid>
+                </Box>
+                <Box  className={classes.right}>
+                    <Box className="addresstitle" ml={1}>New Address</Box>
+                    <TextField
+                    required
+                    id="outlined-required"
+                    label="Address"
+                    variant="outlined"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    />
+                    <TextField
+                    required
+                    id="outlined-required"
+                    label="City"
+                    variant="outlined"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    />
+                    <TextField
+                    id="outlined-number"
+                    label="State"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    variant="outlined"
+                    />
+                    <TextField
+                    id="outlined-number"
+                    label="Pin Code"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    variant="outlined"
+                    />
+                    <Box ml={1}>
+                        <Button
+
+                            variant="contained"
+                            color="primary"
+                            size="small"
+                            className={classes.button}
+                            startIcon={<SaveIcon />}
+                            fullWidth={true}
+                        >
+                            Save
+                        </Button>
                     </Box>
-                    <Paper elevation={3} />
-                    <Paper elevation={3} />
-                </div>
-                <div className={classes.right}>
-                <div>
-                    <Box>
-                        <TextField
-                        required
-                        id="outlined-required"
-                        label="Required"
-                        defaultValue="Hello World"
-                        variant="outlined"
-                        />
-                        <TextField
-                        disabled
-                        id="outlined-disabled"
-                        label="Disabled"
-                        defaultValue="Hello World"
-                        variant="outlined"
-                        />
-                        <TextField
-                        id="outlined-password-input"
-                        label="Password"
-                        type="password"
-                        autoComplete="current-password"
-                        variant="outlined"
-                        />
-                        <TextField
-                        id="outlined-read-only-input"
-                        label="Read Only"
-                        defaultValue="Hello World"
-                        InputProps={{
-                            readOnly: true,
-                        }}
-                        variant="outlined"
-                        />
-                        <TextField
-                        id="outlined-number"
-                        label="Number"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        variant="outlined"
-                        />
-                        <TextField id="outlined-search" label="Search field" type="search" variant="outlined" />
-                        <TextField
-                        id="outlined-helperText"
-                        label="Helper text"
-                        defaultValue="Default Value"
-                        helperText="Some important text"
-                        variant="outlined"
-                        />
-                        </Box>
-                    </div>
-                </div>
+                    </Box>
             </div>
+            </>
         )
 }

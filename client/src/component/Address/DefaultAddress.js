@@ -29,11 +29,12 @@ const useStyles = makeStyles({
     },
   });
 
-export default function Address(){
+export default function Address(props){
 
         const classes = useStyles();
+        const {hideChangeBtn ,height} = props;
         return (
-            <Card className={classes.root} elevation={1}>
+            <Card style={{height:height}} className={classes.root} elevation={1}>
             <CardContent>
               <Box mb={1}>
               <Typography  className={classes.title} color="textSecondary" gutterBottom>
@@ -64,24 +65,27 @@ export default function Address(){
                 </Grid> 
               </Grid>
             </Grid>
-            <Box mt={1}>
-                <Link to="/change-address">
-                    <Button  
-                        style={{
-                            padding : [0, "!important"],
-                            width:["80%", "!important"],
-                            marginTop:"10px",
-                            // backgroundColor:"yellow"
-                        }} 
-                        variant="outlined"
-                        size="small"
-                        fullWidth="true"
-                        color="primary"
-                        >
-                        Change Address
-                    </Button>
-                </Link>
-            </Box>
+            { !hideChangeBtn ? (
+                    <Box mt={1}>
+                        <Link to="/change-address">
+                            <Button  
+                                style={{
+                                    padding : [0, "!important"],
+                                    width:["80%", "!important"],
+                                    marginTop:"10px",
+                                    // backgroundColor:"yellow"
+                                }} 
+                                variant="outlined"
+                                size="small"
+                                fullWidth="true"
+                                color="primary"
+                                >
+                                Change Address
+                            </Button>
+                        </Link>
+                    </Box>
+            ) : ("")}
+            
             </CardContent>
           </Card>
         );

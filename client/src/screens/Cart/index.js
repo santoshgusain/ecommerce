@@ -20,7 +20,7 @@ export default class Cart extends Component {
           </div>
           <div style={{ backgroundColor: "grey", flex: 3 }}>
             <CheckOutCart />
-            <DefaultAddress />
+            <DefaultAddress hideChangeBtn={false} height={"200px"} />
           </div>
         </div>
       </div>

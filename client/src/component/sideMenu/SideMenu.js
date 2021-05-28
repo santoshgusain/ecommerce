@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react'
 import { NavDropdown } from "react-bootstrap";
-import {Person} from '@material-ui/icons'
+import {Person} from '@material-ui/icons';
+import {Link} from "react-router-dom";
 
 export default class SideMenu extends Component {
 
@@ -12,10 +13,10 @@ export default class SideMenu extends Component {
             {/* <i style={{alignItems:"center",display: "flex"}} className="fa fa-user" aria-hidden="true"></i> */}
             <Person style={{color: 'white'}} />
             <NavDropdown title="Santosh Gusain" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.1">Orders</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Setting</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Logout</NavDropdown.Item>
+                <Link className="dropdown-item" to="/orders">Profile</Link>
+                <Link className="dropdown-item" to="/orders">Orders</Link>
+                <Link className="dropdown-item" to="/orders">Setting</Link>
+                <Link className="dropdown-item" to="/orders">Logout</Link>
             </NavDropdown>
             </div>
         )
