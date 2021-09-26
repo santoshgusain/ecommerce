@@ -13,10 +13,10 @@ export default class SideMenu extends Component {
             {/* <i style={{alignItems:"center",display: "flex"}} className="fa fa-user" aria-hidden="true"></i> */}
             <Person style={{color: 'white'}} />
             <NavDropdown title="Santosh Gusain" id="basic-nav-dropdown">
-                <Link className="dropdown-item" to="/orders">Profile</Link>
+                <Link className="dropdown-item" to="/profile">Profile</Link>
                 <Link className="dropdown-item" to="/orders">Orders</Link>
-                <Link className="dropdown-item" to="/orders">Setting</Link>
-                <Link className="dropdown-item" to="/orders">Logout</Link>
+                <Link className="dropdown-item" to="/setting">Setting</Link>
+                <Link className="dropdown-item" to="/login">Login</Link>
             </NavDropdown>
             </div>
         )

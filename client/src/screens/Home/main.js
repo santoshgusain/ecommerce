@@ -21,6 +21,7 @@ class Main extends Component {
 
   render() {
     const {productReducer} = this.props;
+    console.log("productReducer",productReducer);
     
     return (
       <>

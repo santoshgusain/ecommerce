@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Card,Button } from "react-bootstrap";
-// import { TextField, Box, Button } from "@material-ui/core";
-import { Delete as DeleteIcon } from "@material-ui/icons";
 import product_img from "../../assets/images/shop.jpg";
+import {Link} from "react-router-dom";
 
 export default class OrderedItem extends Component {
   render() {
@@ -40,7 +39,9 @@ export default class OrderedItem extends Component {
 
                 <Card.Body style={{ display: "flex", padding: "12px" }}>
                     <div>
-                        <Card.Img variant="top" src={product_img} style={{ width: 200 }} />
+                        <Link to="live-order">
+                            <Card.Img variant="top" src={product_img} style={{ width: 200 }} />
+                        </Link>
                     </div>
                     <div className="ml-3" >
                         <Card.Title>Card title</Card.Title>

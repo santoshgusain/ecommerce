@@ -2,6 +2,7 @@ import {usersTypes} from '../types'
 
 const initialState = {
     isLoading: false, 
+    userLogin: true, 
     users: [],
     searchedUsers: [],
     welcomeMsg: "You're welocome"

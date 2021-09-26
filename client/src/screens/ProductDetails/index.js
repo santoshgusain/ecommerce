@@ -59,6 +59,10 @@ const mapStateToProps = (state) => ({
     productReducer: state.productReducer 
   })
 
+  // const mapDispatchToProps = dispatch => ({
+  //   loadUsers: (params) => dispatch(loadUsers(params))
+  // })
+
 export default connect(mapStateToProps, {loadUsers,findUsers}) (withRouter(ProductDetails));
 
 
