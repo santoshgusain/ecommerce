@@ -21,6 +21,12 @@ export default function productReducer(state = initialState, action) {
                 isLoading: false,
                 products: payload.products
             }
+        case productTypes.LOAD_SINGLE_PRODUCT:
+            return {
+                ...state,
+                isLoading: false,
+                singleProduct: payload.singleProduct
+            }
         case productTypes.FIND_PRODUCT:
             return {
                 ...state,

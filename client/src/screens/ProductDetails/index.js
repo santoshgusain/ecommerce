@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import {connect} from 'react-redux'
 import product_img from "../../assets/images/shop.jpg";
 import { withRouter } from "react-router-dom";
-import Moment from 'react-moment';
 
 import {loadUsers,findUsers} from '../../store/actions/users';
+import {getProductById} from '../../store/actions/product';
 
 import spinnerImage from 'assets/images/spinner.svg'
 
@@ -15,11 +15,10 @@ class ProductDetails extends Component {
 
 
   componentDidMount() {
-    this.props.loadUsers();
-    this.props.findUsers('san');
 
+    // getProductById(this.props.match.params.product_id);
     const product = this.props.productReducer.products.find(prod => prod._id === this.props.match.params.product_id);
-
+    console.log(this.props.productReducer);
     this.setState({product})
   }
 
@@ -59,10 +58,7 @@ const mapStateToProps = (state) => ({
     productReducer: state.productReducer 
   })
 
-  // const mapDispatchToProps = dispatch => ({
-  //   loadUsers: (params) => dispatch(loadUsers(params))
-  // })
 
-export default connect(mapStateToProps, {loadUsers,findUsers}) (withRouter(ProductDetails));
+export default connect(mapStateToProps,getProductById) (withRouter(ProductDetails));
 
 

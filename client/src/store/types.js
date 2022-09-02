@@ -7,6 +7,7 @@ export const usersTypes = {
 export const productTypes = {
     IS_LOADING: 'PRODUCT_IS_LOADING',
     LOAD_PRODUCTS: 'LOAD_PRODUCTS',
+    LOAD_SINGLE_PRODUCT: 'LOAD_SINGLE_PRODUCT',
     FIND_PRODUCT: 'FIND_PRODUCT'
 }
 

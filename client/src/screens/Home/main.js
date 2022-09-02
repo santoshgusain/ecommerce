@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-
 import Banner from "./banner";
 import Product from "component/Product/index";
 import SearchBar from "component/Search";
 
 import {loadProducts} from "store/actions/product";
-
 import product_img from "../../assets/images/shop.jpg";
 
 class Main extends Component {
@@ -21,7 +19,6 @@ class Main extends Component {
 
   render() {
     const {productReducer} = this.props;
-    console.log("productReducer",productReducer);
     
     return (
       <>
